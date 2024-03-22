@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 function Inicio() {
   const [breeds, setBreeds] = useState([]);
@@ -12,7 +14,7 @@ function Inicio() {
   const [currentImage, setCurrentImage] = useState("");
   const [selectedBreed, setSelectedBreed] = useState("");
   const [selectedSubBreed, setSelectedSubBreed] = useState("");
-  const [showCard, setShowCard] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchBreeds = async () => {
@@ -86,29 +88,34 @@ function Inicio() {
   };
 
   const handleSearch = () => {
-    setShowCard(true);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedBreed("");
+    setSelectedSubBreed("");
+    setCurrentImage("");
   };
 
   const handleClear = () => {
-    setShowCard(false);
     setSelectedBreed("");
     setSelectedSubBreed("");
     setCurrentImage("");
   };
 
   return (
-    
     <div className="container">
-      <h2 className="mt-4 mb-3">Dog Breed Images</h2>
+      <h2 className="mt-4 mb-3" style={{color:"white"}}>Listado de razas y sub-razas encontrados en la BD </h2>
       <div className="mb-3">
-        <label htmlFor="breedSelect" className="form-label">Select Breed:</label>
+        <label htmlFor="breedSelect" className="form-label" style={{color:"white"}}>Selecciona la raza:</label>
         <select
           id="breedSelect"
           className="form-select"
           value={selectedBreed}
           onChange={handleBreedChange}
         >
-          <option value="">Select Breed</option>
+          <option value="">Raza</option>
           {breeds.map(breed => (
             <option key={breed} value={breed}>{breed}</option>
           ))}
@@ -116,14 +123,14 @@ function Inicio() {
       </div>
       {selectedBreed && subBreeds.length > 0 && (
         <div className="mb-3">
-          <label htmlFor="subBreedSelect" className="form-label">Select Sub Breed:</label>
+          <label htmlFor="subBreedSelect" className="form-label">Selecciona la sub-raza:</label>
           <select
             id="subBreedSelect"
             className="form-select"
             value={selectedSubBreed}
             onChange={handleSubBreedChange}
           >
-            <option value="">Select Sub Breed</option>
+            <option value="">Sub-raza</option>
             {subBreeds.map(subBreed => (
               <option key={subBreed} value={subBreed}>{subBreed}</option>
             ))}
@@ -135,42 +142,46 @@ function Inicio() {
           variant="primary"
           onClick={handleSearch}
           disabled={!selectedBreed}
+          style={{color:"white"}}
         >
-          Search
+          buscar
         </Button>{' '}
         <Button
           variant="secondary"
           onClick={handleClear}
-          disabled={!showCard}
+          disabled={!selectedBreed}
         >
-          Clear
+          Limpiar
         </Button>
       </div>
-      {showCard && (
-        <Card style={{ width: '18rem' }}>
-          <Card.Body>
-            <Card.Title>Breed: {selectedBreed}</Card.Title>
-            {selectedSubBreed && (
-              <Card.Subtitle className="mb-2 text-muted">Sub Breed: {selectedSubBreed}</Card.Subtitle>
-            )}
-            {currentImage && (
-              <div>
-                <Card.Img variant="top" src={currentImage} style={{ maxWidth: "300px", maxHeight: "300px" }} />
-              </div>
-            )}
-            <Button
-              variant="primary"
-              onClick={fetchRandomImage}
-              disabled={!selectedBreed}
-            >
-              Random Image
-            </Button>
-          </Card.Body>
-        </Card>
-      )}
-      
+      <Modal show={showModal} onHide={handleClose} >
+        <Modal.Header closeButton style={{background:"#80ed99"}}>
+          <Modal.Title style={{color:"white"}}>Informacion del Perro</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{background:"#80ed99", color:"white"}}>
+          <h5>Raza: {selectedBreed}</h5>
+          {selectedSubBreed && <p>Sub Raza: {selectedSubBreed}</p>}
+          {currentImage && (
+            <div>
+              <img src={currentImage} alt="Dog" className="img-fluid mb-3" style={{ maxWidth: "300px", maxHeight: "300px" }} />
+            </div>
+          )}
+          <Button
+            variant="primary"
+            onClick={fetchRandomImage}
+            disabled={!selectedBreed}
+            style={{color:"white"}}
+          >
+            Otra foto
+          </Button>
+        </Modal.Body>
+        <Modal.Footer style={{background:"#80ed99"}}>
+          <Button variant="secondary" onClick={handleClose} style={{color:"white"}}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
-    
   );
 }
 export default Inicio

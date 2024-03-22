@@ -6,11 +6,13 @@ import inicio from "./pages/Inicio";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Background from "./components/Background";
+import Count from "./components/Count";
 
 function App() {
   return (
     <div>
-      <Background></Background>
+      <Background/>
+     
     </div>
   );
 }

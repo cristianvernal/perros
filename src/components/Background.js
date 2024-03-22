@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
+import Count from "./Count";
 
 const Background = () => {
   return (
@@ -28,6 +29,9 @@ const Background = () => {
             </Link>
             {""}
           </div>
+          <Count>
+        
+          </Count>
         </div>
       </div>
     </div>

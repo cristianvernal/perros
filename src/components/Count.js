@@ -29,7 +29,7 @@ function Count() {
 
   return (
     <div>
-      <div style={{color:"white"}}>
+      <div style={{color:"white", marginLeft:"500px"}}>
       <h2>Numero Total de Razas: {totalBreeds}</h2>
       <h2>Numero Total de Sub-Razas: {totalSubBreeds}</h2>
     </div>

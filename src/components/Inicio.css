@@ -4,3 +4,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: fixed;
 background-size: cover;
 }
+
+.Total{
+    color:white; 
+    margin-left:550px; 
+    margin-Top:10px;
+}

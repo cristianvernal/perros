@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../components/Inicio.css";
 
 function Count() {
   const [totalBreeds, setTotalBreeds] = useState(0);
@@ -29,10 +30,10 @@ function Count() {
 
   return (
     <div>
-      <div style={{color:"white", marginLeft:"500px"}}>
-      <h2>Numero Total de Razas: {totalBreeds}</h2>
-      <h2>Numero Total de Sub-Razas: {totalSubBreeds}</h2>
-    </div>
+      <div className="Total">
+        <h2>Numero Total de Razas: {totalBreeds}</h2>
+        <h2>Numero Total de Sub-Razas: {totalSubBreeds}</h2>
+      </div>
     </div>
   );
 }

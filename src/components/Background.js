@@ -16,7 +16,7 @@ const Background = () => {
             style={{ maxWidth: "300px", maxHeight: "300px", marginLeft: "620px", marginTop:"20px" }}
           />
         </div>
-          <div class="hero__title">Razas de Perros</div>
+          <h2 className="Titulo" >Razas de Perros</h2>
           <div class="cube"></div>
           <div class="cube"></div>
           <div class="cube"></div>

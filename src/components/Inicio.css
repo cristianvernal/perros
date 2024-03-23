@@ -15,5 +15,8 @@ background-size: cover;
     max-width: 300px; 
     max-height: 300px; 
     margin-left: 620px;
-    margin-top:20px
+    margin-top:20px;
+    .slide-in-fwd-center{animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both}
+    @keyframes slide-in-fwd-center{0%{transform:translateZ(-1400px);opacity:0}100%{transform:translateZ(0);opacity:1}}
+
 }

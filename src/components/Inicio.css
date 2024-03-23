@@ -10,3 +10,10 @@ background-size: cover;
     margin-left:550px; 
     margin-Top:10px;
 }
+
+.ImagenPerro{
+    max-width: 300px; 
+    max-height: 300px; 
+    margin-left: 620px;
+    margin-top:20px
+}

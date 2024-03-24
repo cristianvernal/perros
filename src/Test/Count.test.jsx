@@ -1,7 +1,7 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Count from "./Count";
+import Count from "../components/Count";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({

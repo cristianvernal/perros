@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/Inicio.css";
+import "../css/Inicio.css";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Image from "react-bootstrap/Image";

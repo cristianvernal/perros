@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../components/Inicio.css";
+import "../css/Inicio.css";
 
 function Count() {
   const [totalBreeds, setTotalBreeds] = useState(0);

@@ -1,4 +1,4 @@
-import "./components/App.css";
+import "./css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Background from "./components/Background";

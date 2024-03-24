@@ -5,18 +5,38 @@ background-attachment: fixed;
 background-size: cover;
 }
 
-.Total{
-    color:white; 
-    margin-left:550px; 
-    margin-Top:10px;
-}
 
-.ImagenPerro{
-    max-width: 300px; 
+.background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  
+  .image-container {
+    margin-bottom: 20px;
+  }
+  
+  .ImagenPerro {
+    max-width: 100%; 
+    height: auto; 
     max-height: 300px; 
-    margin-left: 620px;
-    margin-top:20px;
-    .slide-in-fwd-center{animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both}
-    @keyframes slide-in-fwd-center{0%{transform:translateZ(-1400px);opacity:0}100%{transform:translateZ(0);opacity:1}}
+  }
+  .Titulo {
+    margin-inline-start: auto;
+    text-align: center;
+  }
+  
+  .boton {
+    margin-bottom: 20px;
+  }
 
-}
+  .Total{
+    color: white;
+  }
+
+ 

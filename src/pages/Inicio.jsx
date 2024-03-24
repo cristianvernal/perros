@@ -3,7 +3,7 @@ import "../components/Inicio.css";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import { Button } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 
 function Inicio() {
@@ -211,7 +211,7 @@ function Inicio() {
           {" "}
           <div className="col-md-6">
             {" "}
-            <img
+            <Image
               src="https://news.harvard.edu/wp-content/uploads/2023/11/dog_brains_2500.png"
               className="img-fluid"
               alt="Dog Brains"

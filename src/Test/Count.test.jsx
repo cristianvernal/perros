@@ -16,7 +16,7 @@ global.fetch = jest.fn(() =>
   })
 );
 
-test("renders Count component with correct total counts", async () => {
+test("representa el componente Count con recuentos totales correctos", async () => {
   const { getByText } = render(<Count />);
 
   expect(getByText("Numero Total de Razas: 0")).toBeInTheDocument();

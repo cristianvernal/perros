@@ -3,7 +3,7 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Inicio from '../pages/Inicio';
 
-test('clicking "Otra foto" button fetches and displays another image', async () => {
+test('Al hacer clic en el botón "Otra foto", se busca y muestra otra imagen.', async () => {
   const { getByText, getByAltText } = render(<Inicio />);
   
  

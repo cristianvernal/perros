@@ -22,8 +22,8 @@ body{
 .flex-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Puedes ajustar el espacio entre los elementos según lo necesites */
-  align-items: center; /* Esto centrará horizontalmente los elementos */
-  justify-content: center; /* Esto centrará verticalmente los elementos */
-  height: 100vh; /* Esto asegurará que el contenedor ocupe toda la altura del viewport */
+  gap: 2rem;
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
 }

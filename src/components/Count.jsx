@@ -5,6 +5,7 @@ function Count() {
   const [totalBreeds, setTotalBreeds] = useState(0);
   const [totalSubBreeds, setTotalSubBreeds] = useState(0);
 
+  //Aca contamos las razas y sub razas que tiene la API.
   useEffect(() => {
     const fetchBreedsCount = async () => {
       try {

@@ -14,6 +14,8 @@ function Inicio() {
   const [selectedSubBreed, setSelectedSubBreed] = useState("");
   const [showModal, setShowModal] = useState(false);
 
+
+  //Aca llamamos a los datos que estan en la API.
   useEffect(() => {
     const fetchBreeds = async () => {
       try {
@@ -29,6 +31,7 @@ function Inicio() {
     fetchBreeds();
   }, []);
 
+  //Aca llamamos a las fotos que tiene cada raza.
   const fetchImages = async (breed, subBreed = "") => {
     try {
       let url = `https://dog.ceo/api/breed/${breed}`;
@@ -45,6 +48,7 @@ function Inicio() {
     }
   };
 
+  //LLamamos a una imagen aleatoria de las razas o sub razas.
   const fetchRandomImage = async () => {
     try {
       let url = `https://dog.ceo/api/breed/${selectedBreed}`;
@@ -60,20 +64,23 @@ function Inicio() {
     }
   };
 
+  //Dropwdown con las razas.
   const handleBreedChange = (event) => {
     const breed = event.target.value;
     setSelectedBreed(breed);
-    setSelectedSubBreed(""); // Restablece la raza secundaria cuando cambia la raza principal
+    setSelectedSubBreed(""); 
     fetchImages(breed);
     fetchSubBreeds(breed);
   };
 
+  //Dropdown con las sub razas, si es que la tiene.
   const handleSubBreedChange = (event) => {
     const subBreed = event.target.value;
     setSelectedSubBreed(subBreed);
     fetchImages(selectedBreed, subBreed);
   };
 
+  //Aca llamamos a las sub razas.
   const fetchSubBreeds = async (breed) => {
     try {
       const response = await fetch(`https://dog.ceo/api/breed/${breed}/list`);
